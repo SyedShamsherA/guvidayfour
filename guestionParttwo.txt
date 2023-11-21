@@ -1,0 +1,51 @@
+ SOLVING QUESTIONS USING ARROW FUNCTIONS
+
+ a. Print odd numbers in an array?
+ const printOddNumbers = (arr) => {
+    arr.forEach((num) => {
+        if(num % 2 !== 0){
+            console.log(num)
+        }
+    })
+ }
+ printOddNumbers([1,2,3,4,5])
+
+ b. Convert all the strings to Title caps in a string array?
+ const convertToTitleCaps = (arr) => {
+    return arr.map((str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase())
+ }
+ const titles = convertToTitleCaps(['hello', 'javascript'])
+ console.log(titles)
+
+ c. print sum of all arrays?
+ const sumArray = (arr) => {
+    return arr.reduce((acc , num) => acc + num, 0)
+ }
+ const result = sumArray([1, 2, 3, 4, 5])
+ console.log(result)
+
+ d. return all the prime numbers in an array?
+ const getPrimes = (arr) => {
+    const isPrime = (num) => {
+        for(let i = 2; i < num; i++){
+            if ( num % i === 0){
+                return false;
+            }
+        }
+        return num > 1;
+    }
+    return arr.filter((num) => isPrime(num))
+ }
+ const primes = getPrimes([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+ console.log(primes)
+
+ e. return all the palindromes in an array?
+ const getPalindromes = (arr) => {
+    return arr.filter((word) => {
+        const reversed = word.split('').reverse().join('');
+        return word === reversed 
+    })
+ }
+
+ const Palindrome = getPalindromes(['level', 'madam', 'hello'])
+ console.log(Palindrome)
